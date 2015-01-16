@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "aws-sdk-core", "~> 2.0.12"
   spec.add_dependency "multi_json", "~> 1.0"
   spec.add_dependency "msgpack", ">= 0.5.8"
+  spec.add_dependency "yajl-ruby", "~> 1.0"
 end

@@ -16,6 +16,7 @@ require 'multi_json'
 require 'logger'
 require 'securerandom'
 require 'fluent/plugin/version'
+require 'yajl'
 
 module FluentPluginKinesis
   class OutputFilter < Fluent::BufferedOutput
@@ -97,7 +98,7 @@ module FluentPluginKinesis
 
     def format(tag, time, record)
       data = {
-        data: record.to_json,
+        data: Yajl.dump(record),
         partition_key: get_key(:partition_key,record)
       }
 
